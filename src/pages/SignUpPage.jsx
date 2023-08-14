@@ -21,7 +21,7 @@ export default function SignUpPage() {
         };
 
         axios
-            .post('https:-----------------------signup---------------------------', user)
+            .post(`${import.meta.env.VITE_REACT_APP_API_URL}/signup`, user)
             .then(signupSuccess)
             .catch((promise) => {
                 alert(`Error: ${promise.response.data.message}`);

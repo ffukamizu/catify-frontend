@@ -16,7 +16,7 @@ export default function ProductPage() {
 
     useEffect(() => {
         axios
-            .get(`https------------/${id}/`)
+            .get(`${import.meta.env.VITE_REACT_APP_API_URL}/products`)
             .then((answer) => {
                 setPhoto(answer.data.photo);
                 setName(answer.data.name);
