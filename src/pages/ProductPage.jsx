@@ -37,14 +37,18 @@ export default function ProductPage() {
                 <PhotoContainer>
                     <img
                         src={photo}
-                        alt={id}></img>
+                        alt={id}
+                    />
                 </PhotoContainer>
-                <NameContainer>{name}</NameContainer>
-                <DescriptionContainer>{description}</DescriptionContainer>
-                <TutorContainer>
-                    <p>{email}</p>
-                    <p>{phone}</p>
-                </TutorContainer>
+                <DetailsContainer>
+                    <NameContainer>{name}</NameContainer>
+                    <DescriptionContainer>{description}</DescriptionContainer>
+                    <TutorContainer>
+                        <p>For business inquiries:</p>
+                        <p>Email: {email}</p>
+                        <p>Phone: {phone}</p>
+                    </TutorContainer>
+                </DetailsContainer>
             </ProductContainer>
             <Footer />
         </PageBody>
@@ -57,31 +61,49 @@ const PageBody = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    background-color: #f0f0f0;
 `;
 
 const ProductContainer = styled.div`
-    height: 800px;
-    width: 600px;
+    height: 600px;
+    width: 400px;
     padding: 20px;
-    background-color: red;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`;
-
-const NameContainer = styled.div`
-    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 const PhotoContainer = styled.div`
-    background-color: blue;
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+`;
+
+const DetailsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+`;
+
+const NameContainer = styled.div`
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 `;
 
 const DescriptionContainer = styled.div`
-    background-color: green;
+    text-align: center;
+    margin-bottom: 20px;
 `;
 
 const TutorContainer = styled.div`
-    background-color: yellowgreen;
+    p {
+        margin: 0;
+    }
 `;
