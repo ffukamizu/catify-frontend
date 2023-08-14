@@ -24,7 +24,7 @@ export default function SignUpPage() {
             .post(`${import.meta.env.VITE_REACT_APP_API_URL}/signup`, user)
             .then(signupSuccess)
             .catch((promise) => {
-                alert(`Error: ${promise.response.data.message}`);
+                alert(`Error: ${promise.response}`);
                 setEmail('');
                 setPassword('');
                 setCpf('');
