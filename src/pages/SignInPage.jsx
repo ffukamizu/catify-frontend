@@ -136,10 +136,7 @@ const SignUpButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    a {
-        text-decoration: none;
-    }
+    text-decoration: none;
 `;
 
 const DiagonalBackdrop = styled.div`

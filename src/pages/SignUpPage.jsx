@@ -155,10 +155,7 @@ const Return = styled.button`
     justify-content: center;
     align-items: center;
     margin-top: 65px;
-
-    a {
-        text-decoration: none;
-    }
+    text-decoration: none;
 `;
 
 const DiagonalBackdrop = styled.div`
