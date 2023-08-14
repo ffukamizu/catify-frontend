@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { UserProvider } from './UserContext'; 
+import { UserContext } from './UserContext'; 
 
 export function useUserContext() {
-    return useContext(UserProvider);
+    return useContext(UserContext);
 }
