@@ -12,7 +12,8 @@ export default function ProductPage() {
     const [photo, setPhoto] = useState('');
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const [tutor, setTutor] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
 
     useEffect(() => {
         axios
@@ -21,7 +22,8 @@ export default function ProductPage() {
                 setPhoto(answer.data.photo);
                 setName(answer.data.name);
                 setDescription(answer.data.description);
-                setTutor(answer.data.tutor);
+                setEmail(answer.data.email);
+                setPhone(answer.data.phone);
             })
             .catch((err) => {
                 console.log(err);
@@ -40,8 +42,8 @@ export default function ProductPage() {
                 <NameContainer>{name}</NameContainer>
                 <DescriptionContainer>{description}</DescriptionContainer>
                 <TutorContainer>
-                    <p>{tutor.name}</p>
-                    <p>{tutor.phone}</p>
+                    <p>{email}</p>
+                    <p>{phone}</p>
                 </TutorContainer>
             </ProductContainer>
             <Footer />
