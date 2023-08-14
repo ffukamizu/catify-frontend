@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useUserContext } from '../components/useUserContext.jsx';
+import { useUserContext } from '../components/useUserContext';
 
 export default function SignInPage() {
     const [email, setEmail] = useState('');
