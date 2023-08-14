@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useUserContext } from '../components/UserContext';
 
 export default function SignInPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { updateUserData } = useUserContext();
     const navigate = useNavigate();
 
     function userSignIn(e) {
@@ -18,7 +20,11 @@ export default function SignInPage() {
 
         axios
             .post(`${import.meta.env.VITE_REACT_APP_API_URL}/signin`, user)
-            .then(signInSuccess)
+            .then((response) => {
+                const { id, token } = response.data;
+                updateUserData(id, token);
+                signInSuccess();
+            })
             .catch((promise) => {
                 alert(`Error: ${promise.response.data.message}`);
                 setEmail('');

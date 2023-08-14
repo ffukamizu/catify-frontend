@@ -8,38 +8,41 @@ import MarketplacePage from './pages/MarketplacePage';
 import ProductPage from './pages/ProductPage';
 import PortfolioPage from './pages/PortfolioPage';
 import InsertPage from './pages/InsertPage';
+import UserProvider from './components/UserContext';
 
 export default function App() {
     return (
-        <BrowserRouter>
-            <ResetStyle />
-            <GlobalStyle></GlobalStyle>
-            <Routes>
-                <Route
-                    path="/"
-                    element={<SignInPage />}
-                />
-                <Route
-                    path="/signup"
-                    element={<SignUpPage />}
-                />
-                <Route
-                    path="/marketplace"
-                    element={<MarketplacePage />}
-                />
-                <Route
-                    path="/product/:id"
-                    element={<ProductPage />}
-                />
-                <Route
-                    path="/portfolio"
-                    element={<PortfolioPage />}
-                />
-                <Route
-                    path="/insert"
-                    element={<InsertPage />}
-                />
-            </Routes>
-        </BrowserRouter>
+        <UserProvider>
+            <BrowserRouter>
+                <ResetStyle />
+                <GlobalStyle></GlobalStyle>
+                <Routes>
+                    <Route
+                        path="/"
+                        element={<SignInPage />}
+                    />
+                    <Route
+                        path="/signup"
+                        element={<SignUpPage />}
+                    />
+                    <Route
+                        path="/marketplace"
+                        element={<MarketplacePage />}
+                    />
+                    <Route
+                        path="/products/:id"
+                        element={<ProductPage />}
+                    />
+                    <Route
+                        path="/portfolio"
+                        element={<PortfolioPage />}
+                    />
+                    <Route
+                        path="/insert"
+                        element={<InsertPage />}
+                    />
+                </Routes>
+            </BrowserRouter>
+        </UserProvider>
     );
 }

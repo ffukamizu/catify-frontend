@@ -16,7 +16,7 @@ export default function ProductPage() {
 
     useEffect(() => {
         axios
-            .get(`${import.meta.env.VITE_REACT_APP_API_URL}/products`)
+            .get(`${import.meta.env.VITE_REACT_APP_API_URL}/products/${id}/details`)
             .then((answer) => {
                 setPhoto(answer.data.photo);
                 setName(answer.data.name);
@@ -58,10 +58,14 @@ const PageBody = styled.div`
 `;
 
 const ProductContainer = styled.div`
-    height: 600px;
-    width: 400px;
+    height: 800px;
+    width: 600px;
     padding: 20px;
     background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 const NameContainer = styled.div`

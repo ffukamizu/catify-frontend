@@ -11,7 +11,7 @@ export default function MarketplacePage() {
 
     useEffect(() => {
         axios
-            .get('https -------------listing---------------')
+            .get(`${import.meta.env.VITE_REACT_APP_API_URL}/products`)
             .then((answer) => {
                 setProducts(answer.data);
             })
@@ -27,10 +27,9 @@ export default function MarketplacePage() {
                 {products.map((item) => {
                     <Product
                         key={item.id}
+                        id={item.id}
                         name={item.name}
                         photo={item.photo}
-                        description={item.description}
-                        tutor={item.tutor}
                     />;
                 })}
             </ContentContainer>
