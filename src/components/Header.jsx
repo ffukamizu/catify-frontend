@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     return (
@@ -92,7 +92,7 @@ const MenuContainer = styled.nav`
 
 const NavButton = styled.button`
     height: 60px;
-    width: 100px;
+    width: 110px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;

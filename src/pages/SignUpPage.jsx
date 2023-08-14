@@ -107,6 +107,7 @@ const Field = styled.input`
     border-radius: 50px;
     padding: 15px;
     margin-bottom: 10px;
+    box-shadow: 0px 5px 10px #0000003e;
     ::placeholder {
         color: #999999;
     }
@@ -134,6 +135,7 @@ const Submit = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 5px 10px #0000003e;
 `;
 
 const Return = styled.button`
@@ -156,6 +158,7 @@ const Return = styled.button`
     align-items: center;
     margin-top: 65px;
     text-decoration: none;
+    box-shadow: 0px 5px 10px #0000003e;
 `;
 
 const DiagonalBackdrop = styled.div`

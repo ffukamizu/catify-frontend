@@ -88,6 +88,7 @@ const Field = styled.input`
     border-radius: 50px;
     padding: 15px;
     margin-bottom: 10px;
+    box-shadow: 0px 5px 10px #0000003e;
     ::placeholder {
         color: #999999;
     }
@@ -116,6 +117,7 @@ const SignInButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 5px 10px #0000003e;
 `;
 
 const SignUpButton = styled.button`
@@ -137,6 +139,7 @@ const SignUpButton = styled.button`
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    box-shadow: 0px 5px 10px #0000003e;
 `;
 
 const DiagonalBackdrop = styled.div`
