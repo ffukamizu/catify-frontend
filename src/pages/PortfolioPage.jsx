@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useUserContext } from '../components/useUseContext';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -9,17 +9,18 @@ import Product from '../components/Product';
 
 export default function PortfolioPage() {
     const [products, setProducts] = useState([]);
+    const { userData } = useUserContext();
 
     useEffect(() => {
         axios
-            .get(`https -------------listing-/${id}--------------`)
-            .then((answer) => {
-                setProducts(answer.data);
+            .get(`${import.meta.env.VITE_REACT_APP_API_URL}/${userData.id}/list`)
+            .then((promise) => {
+                setProducts(promise.data);
             })
             .catch((err) => {
                 console.log(err);
             });
-    }, [id]);
+    }, [userData.id]);
 
     return (
         <PageBody>
@@ -28,10 +29,9 @@ export default function PortfolioPage() {
                 {products.map((item) => {
                     <Product
                         key={item.id}
+                        id={item.id}
                         name={item.name}
                         photo={item.photo}
-                        description={item.description}
-                        tutor={item.tutor}
                     />;
                 })}
             </ContentContainer>

@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom';
 export default function Product(props) {
     const { id, name, photo } = props;
 
-
-
     return (
         <ProductContainer>
             <Link to={`/products/${id}`}>
                 <PhotoContainer>
                     <img
                         src={photo}
-                        alt={id}></img>
+                        alt={id}
+                    />
                 </PhotoContainer>
                 <NameContainer>{name}</NameContainer>
             </Link>
@@ -21,21 +20,48 @@ export default function Product(props) {
 }
 
 const ProductContainer = styled.div`
-    height: 600px;
-    width: 400px;
+    height: auto;
+    width: 100%;
     padding: 20px;
-    background-color: red;
+    background-color: #f0f0f0;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: translateY(-4px);
+    }
+
+    a {
+        width: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
 `;
 
 const NameContainer = styled.div`
-    background-color: black;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
 `;
 
 const PhotoContainer = styled.div`
-    height: 600px;
-    background-color: blue;
+    height: 300px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
 `;
