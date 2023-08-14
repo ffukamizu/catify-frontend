@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from 'react';
 
 const UserContext = createContext();
 
-export function UserProvider({ children }) {
+export default function UserProvider({ children }) {
     const [userData, setUserData] = useState({ id: null, token: null });
 
     function updateUserData(id, token) {
@@ -24,5 +24,7 @@ export function UserProvider({ children }) {
         localStorage.setItem('userData', JSON.stringify(userData));
     }, [userData]);
 
-    return <UserContext.Provider value={{ userData, updateUserData, clearUserData }}>{children}</UserContext.Provider>;
+    return (
+        <UserContext.Provider value={{ userData, updateUserData, clearUserData }}>{children}</UserContext.Provider>
+    );
 }
