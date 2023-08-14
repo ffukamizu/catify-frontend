@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import axios from 'axios';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignUpPage() {
     const [email, setEmail] = useState('');
@@ -65,6 +65,12 @@ export default function SignUpPage() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}></Field>
                 <Submit type="submit">Submit</Submit>
+                <Return
+                    type="reset"
+                    as={Link}
+                    to="/">
+                    Return
+                </Return>
             </ContentContainer>
         </PageBody>
     );
@@ -128,6 +134,31 @@ const Submit = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+const Return = styled.button`
+    height: 45px;
+    width: 300px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    color: #ffffff;
+    box-sizing: border-box;
+    background: #e12885;
+    border-color: #e12885;
+    border-style: solid;
+    border-radius: 50px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+
+    a {
+        text-decoration: none;
+    }
 `;
 
 const DiagonalBackdrop = styled.div`
