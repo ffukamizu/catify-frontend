@@ -23,7 +23,7 @@ const ProductContainer = styled.div`
     height: auto;
     width: 100%;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #f3f3f3;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
