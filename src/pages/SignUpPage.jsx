@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { postSignUp } from '../services/apiConfig';
 
 export default function SignUpPage() {
     const [email, setEmail] = useState('');
@@ -20,20 +20,18 @@ export default function SignUpPage() {
             phone: phone,
         };
 
-        axios
-            .post(`${import.meta.env.VITE_REACT_APP_API_URL}/signup`, user)
-            .then(signupSuccess)
-            .catch((promise) => {
-                alert(`Error: ${promise.response}`);
-                setEmail('');
-                setPassword('');
-                setCpf('');
-                setPhone('');
-            });
-    }
+        function signUpSuccess() {
+            navigate('/');
+        }
 
-    function signupSuccess() {
-        navigate('/');
+        function signUpFailure() {
+            setEmail('');
+            setPassword('');
+            setCpf('');
+            setPhone('');
+        }
+
+        postSignUp(user, signUpSuccess, signUpFailure);
     }
 
     return (

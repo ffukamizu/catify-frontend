@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useUserContext } from '../components/useUseContext';
+import { postProducts } from '../services/apiConfig';
+import useAuth from '../services/Auth';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -11,7 +11,7 @@ export default function InsertPage() {
     const [photo, setPhoto] = useState('');
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const { userData } = useUserContext();
+    const auth = useAuth();
     const navigate = useNavigate();
 
     function insertProduct(e) {
@@ -21,22 +21,20 @@ export default function InsertPage() {
             photo: photo,
             name: name,
             description: description,
-            user_id: userData.id
+            user_id: auth.id,
         };
 
-        axios
-            .post(`${import.meta.env.VITE_REACT_APP_API_URL}/products`, product)
-            .then(signupSuccess)
-            .catch((promise) => {
-                alert(`Error: ${promise.response.data.message}`);
-                setPhoto('');
-                setName('');
-                setDescription('');
-            });
-    }
+        function success() {
+            navigate('/marketplace');
+        }
 
-    function signupSuccess() {
-        navigate('/marketplace');
+        function failure() {
+            setPhoto('');
+            setName('');
+            setDescription('');
+        }
+
+        postProducts(product, auth, success, failure);
     }
 
     return (

@@ -8,11 +8,11 @@ import MarketplacePage from './pages/MarketplacePage';
 import ProductPage from './pages/ProductPage';
 import PortfolioPage from './pages/PortfolioPage';
 import InsertPage from './pages/InsertPage';
-import UserProvider from './components/UserContext';
+import { AuthProvider } from './context/AuthContext';
 
 export default function App() {
     return (
-        <UserProvider>
+        <AuthProvider>
             <BrowserRouter>
                 <ResetStyle />
                 <GlobalStyle></GlobalStyle>
@@ -43,6 +43,6 @@ export default function App() {
                     />
                 </Routes>
             </BrowserRouter>
-        </UserProvider>
+        </AuthProvider>
     );
 }

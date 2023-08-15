@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { postSignIn } from '../services/apiConfig';
+import useAuth from '../services/Auth';
 
 export default function SignInPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { signIn } = useAuth();
     const navigate = useNavigate();
 
     function userSignIn(e) {
@@ -17,20 +18,17 @@ export default function SignInPage() {
             password: password,
         };
 
-        axios
-            .post(`${import.meta.env.VITE_REACT_APP_API_URL}/signin`, user)
-            .then((response) => {
-                signInSuccess();
-            })
-            .catch((promise) => {
-                alert(`Error: ${promise.response.data.message}`);
-                setEmail('');
-                setPassword('');
-            });
-    }
+        function loginSuccess(token) {
+            signIn(token);
+            navigate('/marketplace');
+        }
 
-    function signInSuccess() {
-        navigate('/marketplace');
+        function loginFailure() {
+            setEmail('');
+            setPassword('');
+        }
+        
+        postSignIn(user, loginSuccess, loginFailure);
     }
 
     return (

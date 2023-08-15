@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { getProducts } from '../services/apiConfig';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -10,15 +10,12 @@ export default function MarketplacePage() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios
-            .get(`${import.meta.env.VITE_REACT_APP_API_URL}/products`)
-            .then((answer) => {
-                setProducts(answer.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    });
+        function success(data) {
+            setProducts(data);
+        }
+
+        getProducts(success);
+    }, []);
 
     return (
         <PageBody>

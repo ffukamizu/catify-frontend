@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useUserContext } from '../components/useUseContext';
+import useAuth from '../services/Auth';
+import { getPortifolio } from '../services/apiConfig';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -9,18 +9,15 @@ import Product from '../components/Product';
 
 export default function PortfolioPage() {
     const [products, setProducts] = useState([]);
-    const { userData } = useUserContext();
+    const auth = useAuth();
 
     useEffect(() => {
-        axios
-            .get(`${import.meta.env.VITE_REACT_APP_API_URL}/${userData.id}/list`)
-            .then((promise) => {
-                setProducts(promise.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, [userData.id]);
+        function success(data) {
+            setProducts(data);
+        }
+
+        getPortifolio(auth.id, success);
+    }, [auth]);
 
     return (
         <PageBody>
