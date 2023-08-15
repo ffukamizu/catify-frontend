@@ -44,11 +44,10 @@ const PageBody = styled.div`
 
 const ContentContainer = styled.div`
     height: 100%;
-    width: 50%;
     margin-top: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: red;
+    gap: 30px;
 `;

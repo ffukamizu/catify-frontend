@@ -23,7 +23,6 @@ export default function Product(props) {
 
 const ProductContainer = styled.div`
     height: auto;
-    width: 100%;
     padding: 20px;
     background-color: #f3f3f3;
     border-radius: 10px;

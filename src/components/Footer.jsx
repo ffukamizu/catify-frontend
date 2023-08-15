@@ -5,10 +5,10 @@ export default function Footer() {
 }
 
 const Section = styled.footer`
-    height: 100px;
+    height: 50px;
     width: 100%;
     background-color: #373b3e;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     z-index: 1;
 `;

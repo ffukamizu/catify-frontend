@@ -61,7 +61,6 @@ const PageBody = styled.div`
 `;
 
 const ProductContainer = styled.div`
-    height: 600px;
     width: 400px;
     padding: 20px;
     background-color: white;
@@ -78,6 +77,10 @@ const PhotoContainer = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+
+    img {
+        height: 280px;
+    }
 `;
 
 const DetailsContainer = styled.div`
