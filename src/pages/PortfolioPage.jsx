@@ -14,6 +14,8 @@ export default function PortfolioPage() {
     useEffect(() => {
         function success(data) {
             setProducts(data);
+            
+            if (!data) setProducts([]);
         }
 
         getPortifolio(auth.id, success);
@@ -53,5 +55,4 @@ const ContentContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: red;
 `;

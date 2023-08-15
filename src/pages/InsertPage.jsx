@@ -54,7 +54,7 @@ export default function InsertPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}></Field>
                 <Field
-                    type="number"
+                    type="text"
                     placeholder="description"
                     required
                     value={description}
