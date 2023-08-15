@@ -21,7 +21,7 @@ export default function InsertPage() {
             photo: photo,
             name: name,
             description: description,
-            user_id: auth.id,
+            user_id: auth.id ?? null,
         };
 
         function success() {
