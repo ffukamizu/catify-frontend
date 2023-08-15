@@ -10,11 +10,12 @@ import Product from '../components/Product';
 export default function PortfolioPage() {
     const [products, setProducts] = useState([]);
     const auth = useAuth();
+    console.log(auth);
 
     useEffect(() => {
         function success(data) {
             setProducts(data);
-            
+
             if (!data) setProducts([]);
         }
 

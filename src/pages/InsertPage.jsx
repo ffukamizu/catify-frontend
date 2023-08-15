@@ -34,7 +34,7 @@ export default function InsertPage() {
             setDescription('');
         }
 
-        postProducts(product, auth, success, failure);
+        postProducts(product, success, failure);
     }
 
     return (
