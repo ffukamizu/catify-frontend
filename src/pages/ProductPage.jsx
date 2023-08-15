@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getProductById } from '../services/apiConfig';
-import AuthContext from '../context/AuthContext';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';

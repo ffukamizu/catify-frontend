@@ -13,22 +13,22 @@ export default function MarketplacePage() {
         function success(data) {
             setProducts(data);
         }
-
+        
         getProducts(success);
     }, []);
-
+    
     return (
         <PageBody>
             <Header />
             <ContentContainer>
-                {products.map((item) => {
+                {products.map((item) => (
                     <Product
                         key={item.id}
                         id={item.id}
                         name={item.name}
                         photo={item.photo}
-                    />;
-                })}
+                    />
+                ))}
             </ContentContainer>
             <Footer />
         </PageBody>

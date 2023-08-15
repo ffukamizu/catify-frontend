@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 export default function Product(props) {
     const { id, name, photo } = props;
 
+    console.log(props);
+
     return (
         <ProductContainer>
             <Link to={`/products/${id}`}>
