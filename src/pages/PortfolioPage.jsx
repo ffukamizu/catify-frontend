@@ -4,7 +4,6 @@ import useAuth from '../services/Auth';
 import { getPortifolio } from '../services/apiConfig';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Product from '../components/Product';
 
 export default function PortfolioPage() {
@@ -35,7 +34,6 @@ export default function PortfolioPage() {
                     />;
                 })}
             </ContentContainer>
-            <Footer />
         </PageBody>
     );
 }

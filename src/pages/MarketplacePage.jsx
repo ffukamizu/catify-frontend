@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { getProducts } from '../services/apiConfig';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Product from '../components/Product';
 
 export default function MarketplacePage() {
@@ -30,7 +29,7 @@ export default function MarketplacePage() {
                     />
                 ))}
             </ContentContainer>
-            <Footer />
+            <Separator></Separator>
         </PageBody>
     );
 }
@@ -43,11 +42,16 @@ const PageBody = styled.div`
 `;
 
 const ContentContainer = styled.div`
-    height: 100%;
+    height: 500px;
+    width: 300px;
     margin-top: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
+`;
+
+const Separator = styled.div`
+    height: 30px;
 `;

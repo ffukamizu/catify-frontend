@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { getProductById } from '../services/apiConfig';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 export default function ProductPage() {
     const { id } = useParams();
@@ -46,7 +45,6 @@ export default function ProductPage() {
                     </TutorContainer>
                 </DetailsContainer>
             </ProductContainer>
-            <Footer />
         </PageBody>
     );
 }

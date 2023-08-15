@@ -5,7 +5,6 @@ import { postProducts } from '../services/apiConfig';
 import useAuth from '../services/Auth';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 export default function InsertPage() {
     const [photo, setPhoto] = useState('');
@@ -67,7 +66,6 @@ export default function InsertPage() {
                     Return
                 </Return>
             </ContentContainer>
-            <Footer />
         </PageBody>
     );
 }
