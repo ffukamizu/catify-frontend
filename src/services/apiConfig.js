@@ -44,6 +44,28 @@ function getProducts(success) {
         });
 }
 
+function getProductById(id, success) {
+    axios
+        .get(`/products/${id}`)
+        .then((response) => {
+            success(response.data);
+        })
+        .catch((error) => {
+            console.log(error.response.data);
+        });
+}
+
+function getPortifolio(id, success) {
+    axios
+        .get(`/products/${id}/list`)
+        .then((response) => {
+            success(response.data);
+        })
+        .catch((error) => {
+            console.log(error.response.data);
+        });
+}
+
 function postProducts(obj, auth, success, failure) {
     axios
         .post('/products', obj, tokenProvider(auth.token))
@@ -56,15 +78,4 @@ function postProducts(obj, auth, success, failure) {
         });
 }
 
-function getPortifolio(id, success) {
-    axios
-        .get(`/${id}/list`)
-        .then((response) => {
-            success(response.data);
-        })
-        .catch((error) => {
-            console.log(error.response.data);
-        });
-}
-
-export { postSignIn, postSignUp, getProducts, postProducts, getPortifolio };
+export { postSignIn, postSignUp, getProducts, postProducts, getPortifolio, getProductById };

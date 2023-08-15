@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { getProductById } from '../services/apiConfig';
+import AuthContext from '../context/AuthContext';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function ProductPage() {
     const { id } = useParams();
-
     const [photo, setPhoto] = useState('');
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
@@ -16,18 +16,15 @@ export default function ProductPage() {
     const [phone, setPhone] = useState('');
 
     useEffect(() => {
-        axios
-            .get(`${import.meta.env.VITE_REACT_APP_API_URL}/products/${id}/details`)
-            .then((answer) => {
-                setPhoto(answer.data.photo);
-                setName(answer.data.name);
-                setDescription(answer.data.description);
-                setEmail(answer.data.email);
-                setPhone(answer.data.phone);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        function success(answer) {
+            setPhoto(answer.photo);
+            setName(answer.name);
+            setDescription(answer.description);
+            setEmail(answer.email);
+            setPhone(answer.phone);
+        }
+
+        getProductById(id, success);
     }, [id]);
 
     return (
