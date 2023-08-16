@@ -68,7 +68,7 @@ function getPortifolio(id, success) {
 
 function postProducts(obj, success, failure, token) {
     axios
-        .post('/products', tokenProvider(token), obj)
+        .post('/products', obj)
         .then((res) => {
             success(res.data);
         })
