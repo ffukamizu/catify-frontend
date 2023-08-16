@@ -10,7 +10,7 @@ export default function InsertPage() {
     const [photo, setPhoto] = useState('');
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const { id } = useAuth();
+    const { id, token } = useAuth();
     const navigate = useNavigate();
 
     function insertProduct(e) {
@@ -35,7 +35,7 @@ export default function InsertPage() {
 
         console.log(product);
 
-        postProducts(product, success, failure);
+        postProducts(product, success, failure, token);
     }
 
     return (
