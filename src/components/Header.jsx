@@ -131,7 +131,7 @@ const NavButtonLogout = styled.button`
     line-height: 25px;
     color: #ffffff;
     box-sizing: border-box;
-    background: #444444;
+    background: #444445;
     border-color: #ffffff;
     border-style: solid;
     border-radius: 5px;
