@@ -33,6 +33,8 @@ export default function InsertPage() {
             setDescription('');
         }
 
+        console.log(product);
+
         postProducts(product, success, failure);
     }
 

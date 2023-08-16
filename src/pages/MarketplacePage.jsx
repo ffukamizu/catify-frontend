@@ -42,8 +42,8 @@ const PageBody = styled.div`
 `;
 
 const ContentContainer = styled.div`
-    height: 500px;
-    width: 300px;
+    height: 100%;
+    width: 50%;
     margin-top: 160px;
     display: flex;
     justify-content: center;

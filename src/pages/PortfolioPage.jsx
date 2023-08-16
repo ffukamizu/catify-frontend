@@ -24,14 +24,14 @@ export default function PortfolioPage() {
         <PageBody>
             <Header />
             <ContentContainer>
-                {products.map((item) => {
+                {products.map((item) => (
                     <Product
                         key={item.id}
                         id={item.id}
                         name={item.name}
                         photo={item.photo}
-                    />;
-                })}
+                    />
+                ))}
             </ContentContainer>
         </PageBody>
     );
@@ -53,4 +53,5 @@ const ContentContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 30px;
 `;
