@@ -13,7 +13,7 @@ function postSignIn(obj, success, failure) {
     axios
         .post('/signin', obj)
         .then((res) => {
-            success(res.data.token);
+            success(res.data);
         })
         .catch((error) => {
             alert(error.response.data);

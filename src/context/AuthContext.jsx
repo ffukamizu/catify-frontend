@@ -16,7 +16,10 @@ export function AuthProvider({ children }) {
         localStorage.removeItem('auth');
     }
 
-    return <AuthContext.Provider value={{ auth, signIn, signOut }}>{children}</AuthContext.Provider>;
+    const token = auth.token
+    const id = auth.id
+
+    return <AuthContext.Provider value={{ token, id, signIn, signOut, }}>{children}</AuthContext.Provider>;
 }
 
 export default AuthContext;
