@@ -61,6 +61,8 @@ const PageBody = styled.div`
 const ProductContainer = styled.div`
     width: 400px;
     padding: 20px;
+    font-family: 'Open Sans';
+    font-style: normal;
     background-color: white;
     display: flex;
     flex-direction: column;

@@ -81,6 +81,8 @@ const PageBody = styled.div`
 `;
 
 const ContentContainer = styled.form`
+    font-family: 'Open Sans';
+    font-style: normal;
     display: flex;
     align-items: center;
     flex-direction: column;

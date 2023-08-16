@@ -28,12 +28,12 @@ export default function Header() {
                         to="/insert">
                         List a product
                     </NavButton>
-                    <NavButton
+                    <NavButtonLogout
                         as={Link}
                         to="/"
                         onClick={signOut}>
                         Log Out
-                    </NavButton>
+                    </NavButtonLogout>
                 </MenuContainer>
             </Container>
         </Section>
@@ -41,7 +41,7 @@ export default function Header() {
 }
 
 const Section = styled.header`
-    height: 160px;
+    height: 140px;
     width: 100%;
     background-color: #86cecb;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
@@ -100,8 +100,8 @@ const MenuContainer = styled.nav`
 `;
 
 const NavButton = styled.button`
-    height: 60px;
-    width: 110px;
+    height: 50px;
+    width: 100px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -110,6 +110,28 @@ const NavButton = styled.button`
     color: #137a7f;
     box-sizing: border-box;
     background: #ffffff;
+    border-color: #ffffff;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 10px #0000003e;
+    text-decoration: none;
+`;
+
+const NavButtonLogout = styled.button`
+    height: 50px;
+    width: 100px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;    
+    line-height: 25px;
+    color: #ffffff;
+    box-sizing: border-box;
+    background: #444444;
     border-color: #ffffff;
     border-style: solid;
     border-radius: 5px;
