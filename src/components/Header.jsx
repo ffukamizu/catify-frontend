@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import useAuth from '../services/Auth';
 
 export default function Header() {
+    const { signOut } = useAuth();
+
     return (
         <Section>
             <Container>
@@ -24,6 +27,12 @@ export default function Header() {
                         as={Link}
                         to="/insert">
                         List a product
+                    </NavButton>
+                    <NavButton
+                        as={Link}
+                        to="/"
+                        onClick={signOut}>
+                        Log Out
                     </NavButton>
                 </MenuContainer>
             </Container>
