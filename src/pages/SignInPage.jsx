@@ -27,7 +27,7 @@ export default function SignInPage() {
             setEmail('');
             setPassword('');
         }
-        
+
         postSignIn(user, loginSuccess, loginFailure);
     }
 

@@ -10,7 +10,7 @@ export default function InsertPage() {
     const [photo, setPhoto] = useState('');
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const auth = useAuth();
+    const { id } = useAuth();
     const navigate = useNavigate();
 
     function insertProduct(e) {
@@ -20,7 +20,7 @@ export default function InsertPage() {
             photo: photo,
             name: name,
             description: description,
-            user_id: auth.id,
+            user_id: id,
         };
 
         function success() {

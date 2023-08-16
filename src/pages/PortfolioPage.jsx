@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
-import useAuth from '../services/Auth';
-import { getPortifolio } from '../services/apiConfig';
+import useAuth from '../services/Auth.jsx';
+import { getPortifolio } from '../services/apiConfig.js';
 
 import Header from '../components/Header';
 import Product from '../components/Product';
 
 export default function PortfolioPage() {
     const [products, setProducts] = useState([]);
-    const auth = useAuth();
-    console.log(auth);
+    const { id } = useAuth();
 
     useEffect(() => {
         function success(data) {
@@ -18,8 +17,8 @@ export default function PortfolioPage() {
             if (!data) setProducts([]);
         }
 
-        getPortifolio(auth.id, success);
-    }, [auth]);
+        getPortifolio(id, success);
+    }, [id]);
 
     return (
         <PageBody>
